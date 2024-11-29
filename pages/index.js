@@ -3,15 +3,24 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h1>GameDevelipers Secure Site</h1>
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-purple-600 to-blue-400 text-white">
+      <h1 className="text-4xl font-bold mb-4">GameDevelipers secure site</h1>
+
       <SignedIn>
-        <p>Signed in</p>
+        <p className="text-lg mb-4">You are signed in</p>
+        <Link href="/dashboard">
+          <button className="bg-green-500 px-4 py-2 rounded-lg text-white hover:bg-green-600">
+            Go to Dashboard
+          </button>
+        </Link>
       </SignedIn>
+
       <SignedOut>
-        <p>Please sign in to access.</p>
+        <p className="text-lg mb-4">Please sign in to access</p>
         <Link href="/sign-in">
-          <button>Sign In</button>
+          <button className="bg-blue-500 px-4 py-2 rounded-lg text-white hover:bg-blue-600">
+            Sign In
+          </button>
         </Link>
       </SignedOut>
     </div>
